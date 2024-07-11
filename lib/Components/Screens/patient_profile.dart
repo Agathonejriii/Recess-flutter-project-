@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:medical_reminder/models/profilemodel.dart';
+import 'package:medical_reminder/Components/Screens/user_details_form.dart'; // Import UserDetailsForm
+
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -174,7 +176,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      CongratulationsPage()),
+                                      UserDetailsForm()), // Navigate to UserDetailsForm
                             );
                           }
                         },
@@ -187,24 +189,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class CongratulationsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Congratulations'),
-      ),
-      body: Center(
-        child: Text(
-          'Congratulations! Your profile has been created.',
-          style: TextStyle(fontSize: 24),
-          textAlign: TextAlign.center,
         ),
       ),
     );
